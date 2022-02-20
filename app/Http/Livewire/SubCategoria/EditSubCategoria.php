@@ -94,7 +94,7 @@ class EditSubCategoria extends Component
         {
             Storage::delete([$this->subcategoria->image]);
 
-            $image= $this->image->store('public');
+            $image= $this->image->store('public/subcategorias');
             $this->subcategoria->image = Storage::url($image);
         }
         

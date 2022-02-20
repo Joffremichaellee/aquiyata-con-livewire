@@ -46,7 +46,7 @@ class CreateCategoria extends Component
 
         //$image = Storage::disk('categorias')->put('avatars/1');
 
-        $image= $this->image->store('public');
+        $image= $this->image->store('public/categorias');
 
         /*$image_path = $image->getClientOriginalName();
 

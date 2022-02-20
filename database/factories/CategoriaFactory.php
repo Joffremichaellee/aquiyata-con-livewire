@@ -22,7 +22,7 @@ class CategoriaFactory extends Factory
             'nombre' => $this->faker->name(),
             'descripcion' => $this->faker->text(),
             'estado' => true,
-            'image' => '/storage/' . $this->faker->image('public/storage', 600, 480, null, false),
+            'image' => '/storage/categorias/' . $this->faker->image('public/storage/categorias', 600, 480, null, false),
         ];
     }
 }

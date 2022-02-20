@@ -60,7 +60,7 @@ class EditCategoria extends Component
         {
             Storage::delete([$this->categoria->image]);
 
-            $image= $this->image->store('public');
+            $image= $this->image->store('public/categorias');
             $this->categoria->image = Storage::url($image);
         }
         

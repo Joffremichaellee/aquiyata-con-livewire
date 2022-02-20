@@ -86,7 +86,7 @@ padding: 0px 0px 0px 0px;
 <!--CATEOGRIA-->
 
 <script>
-    Livewire.on('alertDelete', categoriaId => {
+    Livewire.on('alertDeleteCategoria', categoriaId => {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -116,7 +116,7 @@ padding: 0px 0px 0px 0px;
 <!--SUBCATEGORIA-->
 
 <script>
-    Livewire.on('alertDelete', subcategoriaId => {
+    Livewire.on('alertDeleteSubCategoria', subcategoriaId => {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",

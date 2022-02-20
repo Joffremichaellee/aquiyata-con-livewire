@@ -35,22 +35,27 @@
                 <a href={{route('categoria.create')}} class="btn btn-primary shadow-md mr-2">Nueva Categoria</a>
                
                 <div class="dropdown">
-                    <button class="dropdown-toggle btn px-2 box text-gray-700 dark:text-gray-300" aria-expanded="false">
-                        <span class="w-5 h-5 flex items-center justify-center"> <i class="w-4 h-4"
-                                data-feather="plus"></i> </span>
-                    </button>
-                    <div class="dropdown-menu w-40">
-                        <div class="dropdown-menu__content box dark:bg-dark-1 p-2">
-                            <a href=""
-                                class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">
-                                <i data-feather="printer" class="w-4 h-4 mr-2"></i> Print </a>
-                            <a href=""
-                                class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">
-                                <i data-feather="file-text" class="w-4 h-4 mr-2"></i> Export to Excel </a>
-                            <a href=""
-                                class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">
-                                <i data-feather="file-text" class="w-4 h-4 mr-2"></i> Export to PDF </a>
-                        </div>
+                    <div class="relative">
+                        <x-jet-dropdown align="right" width="36">
+                            <x-slot name="trigger">
+                                <button class="dropdown-toggle btn px-2 box text-gray-700 dark:text-gray-300" aria-expanded="false">
+                                    <span class="w-5 h-5 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus w-4 h-4"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                                </button>
+                            </x-slot>
+                            <x-slot name="content">
+                                <div class="dropdown-menu__content box dark:bg-dark-1 p-2">
+                                    <a href="" style="width:8.2rem"
+                                        class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer w-4 h-4 mr-2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg> Print </a>
+                                    <a href="" style="width:8.2rem"
+                                        class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text w-4 h-4 mr-2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Export to Excel </a>
+                                    <a href="" style="width:8.2rem"
+                                        class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text w-4 h-4 mr-2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Export to PDF </a>
+                                </div>
+                            </x-slot>          
+                        </x-jet-dropdown>
                     </div>
                 </div>
                 <div class="hidden md:block mx-auto text-gray-600"></div>
@@ -58,11 +63,7 @@
                     <div class="w-56 relative text-gray-500 dark:text-gray-300">
                         <input type="text" class="form-control w-56 box pr-10 placeholder-theme-13"
                             placeholder="Search..." wire:model="search">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0"
-                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                     </div>
                 </div>
             </div>
@@ -163,7 +164,7 @@
                                             <!--<div class="w-10 h-10 image-fit zoom-in">
                                                 <img alt="Tinker Tailwind HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-11.jpg" title="Uploaded at 23 December 2022">
                                             </div>-->
-                                            <div class="w-10 h-10 image-fit zoom-in">
+                                            <div class="w-10 h-10 image-fit zoom-in rounded-full">
                                                 <img alt="Tinker Tailwind HTML Admin Template" class="tooltip rounded-full" src="{{ $c->image }}" title="Uploaded at 23 December 2022">
                                             </div>
                                             <!--<div class="w-10 h-10 image-fit zoom-in -ml-5">
@@ -224,7 +225,7 @@
                                                 </svg>Edit 
                                             </a>
 
-                                            <a wire:click="$emit('alertDelete', {{$c}})" class="flex items-center text-theme-6" href="javascript:;"
+                                            <a wire:click="$emit('alertDeleteCategoria', {{$c}})" class="flex items-center text-theme-6" href="javascript:;"
                                                 data-toggle="modal" data-target="#delete-confirmation-modal"> <svg
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     class="icon icon-tabler icon-tabler-trash text-red-500" width="14"
@@ -246,10 +247,16 @@
 
                 @else
 
-                    <div class=" intro-x w-full h-20 bg-white items-center">
+                    <!--<div class=" intro-x w-full h-20 bg-white items-center">
                         <p class="absolute top-1/2 left-1/2"
                             style="transform: translate(-50%, -50%); font-family: 'Open Sans', sans-serif;">No existe
                             ningun registro coincidente</p>
+                    </div>-->
+
+                    <div class="grid w-full h-20 bg-white items-center ">
+                        <p class="text-center" style=" font-family: 'Open Sans', sans-serif;top:2px">
+                            No existe ningun registro coincidente
+                        </p>
                     </div>
 
                 @endif

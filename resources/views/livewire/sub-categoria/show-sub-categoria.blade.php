@@ -163,90 +163,188 @@
                         <tbody>
 
                             @foreach ($subcategorias as $sc)
-                                <tr class="intro-x">
-                                    <td class="w-10">
-                                        <div class="flex justify-center">
-                                            <!--<div class="w-10 h-10 image-fit zoom-in">
-                                                <img alt="Tinker Tailwind HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-11.jpg" title="Uploaded at 23 December 2022">
-                                            </div>-->
-                                            <div class="w-10 h-10 image-fit zoom-in">
-                                                <img alt="Tinker Tailwind HTML Admin Template" class="tooltip rounded-full" src="{{ $sc->image }}" title="Uploaded at 23 December 2022">
-                                            </div>
-                                            <!--<div class="w-10 h-10 image-fit zoom-in -ml-5">
-                                                <img alt="Tinker Tailwind HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-3.jpg" title="Uploaded at 23 December 2022">
-                                            </div>-->
-                                        </div>
-                                    </td>
-                                    <td class="w-40">
-                                        <div class="flex">
-                                            <div class="w-10 h-10">
-                                                {{ $sc->id }}
-                                                {{--{{ $loop->pending }}--}}
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p href="" class="font-medium whitespace-nowrap">{{ $sc->nombre }}</p>
-                                        <!--<div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Smartphone &amp; Tablet
-                            </div>-->
-                                    </td>
-                                    <td>
-                                        <p href="" class="font-medium whitespace-nowrap">{{ $sc->nombre_categoria }}</p>
-                                        <!--<div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Smartphone &amp; Tablet
-                            </div>-->
-                                    </td>
-                                    <td> {{ $sc->descripcion }}</td>
-                                    <td class="w-40 text-center">
-                                        @if ($sc->estado === 1)
-                                            <button wire:click="activar({{$sc->id}})"
-                                                class="px-2 items-center inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4"
-                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M5 13l4 4L19 7" />
-                                                </svg>Activo
-                                            </button>
-                                            {{$estado}}
-                                        @elseif($sc->estado === 0)
-                                            <button wire:click="desactivar({{$sc->id}})"
-                                                class="px-2 items-center inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4"
-                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M5 13l4 4L19 7" />
-                                                </svg>Desactivado
-                                            </button>
-                                        @endif
+                                @if ($sc->nombre_estado == 0)
 
-                                    </td>
-                                    <td class="table-report__action w-56">
-                                        <div class="flex justify-center items-center">
-                                            
-                                            <a href="{{ route('subcategoria.edit', $sc->id) }}" class="flex items-center mr-3" href="javascript:;"><!--href="javascript:;"-->
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="14" height="14" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                    <path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
-                                                    <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />
-                                                    <line x1="16" y1="5" x2="19" y2="8" />
-                                                </svg>Edit 
-                                            </a>
 
-                                            <a wire:click="$emit('alertDelete', {{$sc}})" class="flex items-center text-theme-6" href="javascript:;"
-                                                data-toggle="modal" data-target="#delete-confirmation-modal"> <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    class="icon icon-tabler icon-tabler-trash text-red-500" width="14"
-                                                    height="14" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FF2C16"
-                                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <line x1="4" y1="7" x2="20" y2="7" />
-                                                    <line x1="10" y1="11" x2="10" y2="17" />
-                                                    <line x1="14" y1="11" x2="14" y2="17" />
-                                                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                                </svg> Delete </a>
-                                        </div>
-                                    </td>
-                                </tr>
+
+                                    mal
+                                    <tr class="intro-x" style="">
+                                        <td class="w-10" style="background-color: rgb(209 213 219);">
+                                            <div class="flex justify-center">
+                                                <!--<div class="w-10 h-10 image-fit zoom-in">
+                                                    <img alt="Tinker Tailwind HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-11.jpg" title="Uploaded at 23 December 2022">
+                                                </div>-->
+                                                <div class="w-10 h-10 image-fit zoom-in rounded-full">
+                                                    <img alt="Tinker Tailwind HTML Admin Template" class="tooltip rounded-full" src="{{ $sc->image }}" title="Uploaded at 23 December 2022">
+                                                </div>
+                                                <!--<div class="w-10 h-10 image-fit zoom-in -ml-5">
+                                                    <img alt="Tinker Tailwind HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-3.jpg" title="Uploaded at 23 December 2022">
+                                                </div>-->
+                                            </div>
+                                        </td>
+                                        <td class="w-40" style="background-color: rgb(209 213 219);">
+                                            <div class="flex">
+                                                <div class="w-10 h-10">
+                                                    {{ $sc->id }}
+                                                    {{--{{ $loop->pending }}--}}
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td style="background-color: rgb(209 213 219);">
+                                            <p href="" class="font-medium whitespace-nowrap w-32">{{ $sc->nombre }}</p>
+                                            <!--<div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Smartphone &amp; Tablet
+                                </div>-->
+                                        </td>
+                                        <td style="background-color: rgb(209 213 219);">
+                                            <p href="" class="font-medium whitespace-nowrap">{{ $sc->nombre_categoria }}</p>
+                                            <!--<div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Smartphone &amp; Tablet
+                                </div>-->
+                                        </td>
+                                        <td style="background-color: rgb(209 213 219);">
+                                            <p class="font-medium whitespace-nowrap w-28">{{ $sc->descripcion }}</p> 
+                                        </td>
+                                        <td class="w-40 text-center" style="background-color: rgb(209 213 219);">
+                                            @if ($sc->estado === 1)
+                                                <button wire:click="activar({{$sc->id}})"
+                                                    class="px-2 items-center inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2" d="M5 13l4 4L19 7" />
+                                                    </svg>Activo
+                                                </button>
+                                                {{$estado}}
+                                            @elseif($sc->estado === 0)
+                                                <button wire:click="desactivar({{$sc->id}})"
+                                                    class="px-2 items-center inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2" d="M5 13l4 4L19 7" />
+                                                    </svg>Desactivado
+                                                </button>
+                                            @endif
+
+                                        </td>
+                                        <td class="table-report__action w-56" style="background-color: rgb(209 213 219);">
+                                            <div class="flex justify-center items-center">
+                                                
+                                                <a href="{{ route('subcategoria.edit', $sc->id) }}" class="flex items-center mr-3" href="javascript:;"><!--href="javascript:;"-->
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="14" height="14" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                                        <path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
+                                                        <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />
+                                                        <line x1="16" y1="5" x2="19" y2="8" />
+                                                    </svg>Edit 
+                                                </a>
+
+                                                <a wire:click="$emit('alertDeleteSubCategoria', {{$sc}})" class="flex items-center text-theme-6" href="javascript:;"
+                                                    data-toggle="modal" data-target="#delete-confirmation-modal"> <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="icon icon-tabler icon-tabler-trash text-red-500" width="14"
+                                                        height="14" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FF2C16"
+                                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                        <line x1="4" y1="7" x2="20" y2="7" />
+                                                        <line x1="10" y1="11" x2="10" y2="17" />
+                                                        <line x1="14" y1="11" x2="14" y2="17" />
+                                                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                                    </svg> Delete </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @if ($sc->nombre_estado == 1)
+                                    
+                                    bien
+                                    <tr class="intro-x">
+                                        <td class="w-10">
+                                            <div class="flex justify-center">
+                                                <!--<div class="w-10 h-10 image-fit zoom-in">
+                                                    <img alt="Tinker Tailwind HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-11.jpg" title="Uploaded at 23 December 2022">
+                                                </div>-->
+                                                <div class="w-10 h-10 image-fit zoom-in rounded-full">
+                                                    <img alt="Tinker Tailwind HTML Admin Template" class="tooltip rounded-full" src="{{ $sc->image }}" title="Uploaded at 23 December 2022">
+                                                </div>
+                                                <!--<div class="w-10 h-10 image-fit zoom-in -ml-5">
+                                                    <img alt="Tinker Tailwind HTML Admin Template" class="tooltip rounded-full" src="dist/images/preview-3.jpg" title="Uploaded at 23 December 2022">
+                                                </div>-->
+                                            </div>
+                                        </td>
+                                        <td class="w-40">
+                                            <div class="flex">
+                                                <div class="w-10 h-10">
+                                                    {{ $sc->id }}
+                                                    {{--{{ $loop->pending }}--}}
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p href="" class="font-medium whitespace-nowrap w-32">{{ $sc->nombre }}</p>
+                                            <!--<div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Smartphone &amp; Tablet
+                                </div>-->
+                                        </td>
+                                        <td>
+                                            <p href="" class="font-medium whitespace-nowrap">{{ $sc->nombre_categoria }}</p>
+                                            <!--<div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Smartphone &amp; Tablet
+                                </div>-->
+                                        </td>
+                                        <td>
+                                            <p class="font-medium whitespace-nowrap w-28">{{ $sc->descripcion }}</p> 
+                                        </td>
+                                        <td class="w-40 text-center">
+                                            @if ($sc->estado === 1)
+                                                <button wire:click="activar({{$sc->id}})"
+                                                    class="px-2 items-center inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2" d="M5 13l4 4L19 7" />
+                                                    </svg>Activo
+                                                </button>
+                                                {{$estado}}
+                                            @elseif($sc->estado === 0)
+                                                <button wire:click="desactivar({{$sc->id}})"
+                                                    class="px-2 items-center inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2" d="M5 13l4 4L19 7" />
+                                                    </svg>Desactivado
+                                                </button>
+                                            @endif
+
+                                        </td>
+                                        <td class="table-report__action w-56">
+                                            <div class="flex justify-center items-center">
+                                                
+                                                <a href="{{ route('subcategoria.edit', $sc->id) }}" class="flex items-center mr-3" href="javascript:;"><!--href="javascript:;"-->
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="14" height="14" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                                        <path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
+                                                        <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />
+                                                        <line x1="16" y1="5" x2="19" y2="8" />
+                                                    </svg>Edit 
+                                                </a>
+
+                                                <a wire:click="$emit('alertDeleteSubCategoria', {{$sc}})" class="flex items-center text-theme-6" href="javascript:;"
+                                                    data-toggle="modal" data-target="#delete-confirmation-modal"> <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="icon icon-tabler icon-tabler-trash text-red-500" width="14"
+                                                        height="14" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FF2C16"
+                                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                        <line x1="4" y1="7" x2="20" y2="7" />
+                                                        <line x1="10" y1="11" x2="10" y2="17" />
+                                                        <line x1="14" y1="11" x2="14" y2="17" />
+                                                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                                    </svg> Delete </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endif
                             @endforeach
                         </tbody>
                     </table>

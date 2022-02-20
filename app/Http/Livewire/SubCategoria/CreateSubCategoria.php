@@ -46,7 +46,6 @@ class CreateSubCategoria extends Component
         'nombre' => 'required|max:50|min:2|unique:subcategorias',
         'image' => 'required|image',
         'descripcion' => '',
-        fffff
         /*'descripcion' => 'required|max:256',*/
     ];
 
@@ -63,7 +62,7 @@ class CreateSubCategoria extends Component
 
         //$image = Storage::disk('categorias')->put('avatars/1');
 
-        $image= $this->image->store('public');
+        $image= $this->image->store('public/subcategorias');
 
         /*$image_path = $image->getClientOriginalName();
 

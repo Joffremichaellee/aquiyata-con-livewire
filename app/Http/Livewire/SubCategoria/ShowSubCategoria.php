@@ -32,7 +32,7 @@ class ShowSubCategoria extends Component
     public function render()
     {
         $subcategorias = SubCategoria::join('categorias','subcategorias.categoria_id','=','categorias.id')
-                                ->select('subcategorias.id','subcategorias.nombre','subcategorias.descripcion','subcategorias.estado','subcategorias.image','subcategorias.categoria_id','categorias.nombre as nombre_categoria')
+                                ->select('subcategorias.id','subcategorias.nombre','subcategorias.descripcion','subcategorias.estado','subcategorias.image','subcategorias.categoria_id','categorias.nombre as nombre_categoria','categorias.estado as nombre_estado')
                                 ->orWhere('subcategorias.nombre','like','%'.$this->search.'%')
                                 ->orWhere('subcategorias.descripcion','like','%'.$this->search.'%')
                                 ->orderBy('subcategorias.id', $this->direction)
