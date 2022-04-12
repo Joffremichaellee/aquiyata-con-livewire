@@ -185,11 +185,15 @@
                                         <!--<div class="text-gray-600 text-xs whitespace-nowrap mt-0.5">Smartphone &amp; Tablet
                             </div>-->
                                     </td>
-                                    <td><p class="descripcion " 
-                                    style="
-                                    
-                                        
-                                    "> {{ $c->descripcion }} </p></td><!--text-ellipsis no funciona aun en tailwind creo porque a mi no me funciona-->
+                                    <td>
+                                        <p class="descripcion">
+                                            @if (!$c->descripcion)
+                                                -
+                                            @else
+                                                {{$c->descripcion}}
+                                            @endif 
+                                        </p>
+                                    </td><!--text-ellipsis no funciona aun en tailwind creo porque a mi no me funciona-->
                                     <td class="w-40 text-center">
                                         @if ($c->estado === 1)
                                             <button wire:click="activar({{$c->id}})"

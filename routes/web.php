@@ -10,6 +10,10 @@ use App\Http\Livewire\SubCategoria\ShowSubCategoria;
 use App\Http\Livewire\SubCategoria\CreateSubCategoria;
 use App\Http\Livewire\SubCategoria\EditSubCategoria;
 
+use App\Http\Livewire\Empresa\ShowEmpresa;
+use App\Http\Livewire\Empresa\CreateEmpresa;
+use App\Http\Livewire\Empresa\EditEmpresa;
+
 /*
 |--------------------------------------------------------------------------
     | Web Routes
@@ -48,3 +52,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/categoria/edit/{id}', Edi
 Route::middleware(['auth:sanctum', 'verified'])->get('/subcategoria', ShowSubCategoria::class)->name('subcategoria.index');
 Route::middleware(['auth:sanctum', 'verified'])->get('/subcategoria/create', CreateSubCategoria::class)->name('subcategoria.create');
 Route::middleware(['auth:sanctum', 'verified'])->get('/subcategoria/edit/{id}', EditSubCategoria::class)->name('subcategoria.edit');
+
+
+/*=========== Empresa ==========*/
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/empresa', ShowEmpresa::class)->name('empresa.index');
+Route::middleware(['auth:sanctum', 'verified'])->get('/empresa/create', CreateEmpresa::class)->name('empresa.create');
+Route::middleware(['auth:sanctum', 'verified'])->get('/empresa/edit/{id}', EditEmpresa::class)->name('empresa.edit');

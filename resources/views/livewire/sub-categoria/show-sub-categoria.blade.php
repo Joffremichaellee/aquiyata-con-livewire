@@ -351,10 +351,16 @@
 
                 @else
 
-                    <div class=" intro-x w-full h-20 bg-white items-center">
+                    <!--<div class=" intro-x w-full h-20 bg-white items-center">
                         <p class="absolute top-1/2 left-1/2"
                             style="transform: translate(-50%, -50%); font-family: 'Open Sans', sans-serif;">No existe
                             ningun registro coincidente</p>
+                    </div>-->
+
+                    <div class="grid w-full h-20 bg-white items-center ">
+                        <p class="text-center" style=" font-family: 'Open Sans', sans-serif;top:2px">
+                            No existe ningun registro coincidente
+                        </p>
                     </div>
 
                 @endif
