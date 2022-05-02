@@ -44,4 +44,21 @@ class ShowEmpresa extends Component
         return view('livewire.empresa.show-empresa', compact('empresas'), array('user' => Auth::user()) )
         ->layout('layouts.paneldos');
     }
+
+    public function activar($id)
+    {
+        // if (!$request->ajax()) return redirect('/');
+        $categoria = Empresa::findOrFail($id);
+        $categoria->estado = 0;
+        $categoria->save(); 
+    }
+
+    public function desactivar($id)
+    {
+        // if (!$request->ajax()) return redirect('/');
+        $categoria = Empresa::findOrFail($id);
+        $categoria->estado = 1;
+        $categoria->save();
+    }
+
 }

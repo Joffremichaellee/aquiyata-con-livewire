@@ -118,7 +118,7 @@ class CreateEmpresa extends Component
 
         $this->emit('alert');
 
-        return redirect()->route('subcategoria.index');
+        return redirect()->route('empresa.index');
     }
 
 }

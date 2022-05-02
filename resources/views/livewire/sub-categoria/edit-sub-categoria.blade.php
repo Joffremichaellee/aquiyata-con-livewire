@@ -101,7 +101,7 @@
                                                 
                                             @elseif ($subcategoria->image) <!-- tambien solo puede ir else-->
                                                 
-                                                <div class="w-20 h-20 image-fit zoom-in mt-5">
+                                                <div class="w-20 h-20 image-fit zoom-in mt-5 rounded-full">
                                                     <img alt="image" class="tooltip rounded-full" src="{{ ($subcategoria->image) }}" title="Uploaded at 23 December 2022">
                                                 </div>
                                             

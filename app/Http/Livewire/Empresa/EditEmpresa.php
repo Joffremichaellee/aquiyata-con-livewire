@@ -17,12 +17,24 @@ class EditEmpresa extends Component
 
     use WithFileUploads;
 
-    public $nombre;
     public $empresa;
-    public $descripcion;
+    public $nombre;
     public $dni_ruc;
     public $telefono;
+    public $celular;
+    public $email;
+    public $whatsapp;
+    public $slogan;
+    public $descripcion;
     public $logo;
+    public $categoria_id;
+    public $descripcion_breve;
+    public $titulo;
+    public $title;
+    public $keywords;
+    public $empresascol;
+    public $slug;
+    public $estrellas;
 
     
     public function mount($id = null)
@@ -71,7 +83,22 @@ class EditEmpresa extends Component
 
         $this->empresa->update([
             'nombre' => $this->nombre,
+            'dni_ruc' => $this->descripcion,
+            'telefono' => $this->nombre,
+            'celular' => $this->celular,
+            'email' => $this->email,
+            'whatsapp' => $this->whattsap,
+            'slogan' => $this->slogan,
             'descripcion' => $this->descripcion,
+            'estado' => $this->estado,
+            'estrellas' => $this->estrellas,
+            'descripcion_breve' => $this->descripcion_breve,
+            'titulo' => $this->titulo,
+            'title' => $this->title,
+            'keywords' => $this->keywords,
+            'empresascol' => $this->empresascol,
+            'slug' => $this->slug,
+            'logo' => $this->slug,
             
         ]);
 
@@ -102,7 +129,21 @@ class EditEmpresa extends Component
         if ($this->empresa) {
 
             $this->nombre = $this->empresa->nombre;
+            $this->dni_ruc = $this->empresa->dni_ruc;
+            $this->telefono = $this->empresa->telefono;
+            $this->celular = $this->empresa->celular;
+            $this->email = $this->empresa->email;
+            $this->whatsapp = $this->empresa->whattsap;
+            $this->slogan = $this->empresa->slogan;
             $this->descripcion = $this->empresa->descripcion;
+            $this->estado = $this->empresa->estado;
+            $this->estrellas = $this->empresa->estrellas;
+            $this->descripcion_breve = $this->empresa->descripcion_breve;
+            $this->titulo = $this->empresa->titulo;
+            $this->title = $this->empresa->title;
+            $this->keywords = $this->empresa->keywords;
+            $this->empresascol = $this->empresa->empresascol;
+            $this->slug = $this->empresa->slug;
         }
 
     }
